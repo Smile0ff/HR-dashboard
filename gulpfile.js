@@ -30,8 +30,8 @@ gulp.task("fonts", function(){
 
 gulp.task("css", function(){
 
-
-	var fileList = ["home.less"],
+	var fileList = ["staff.less"],
+		scrollCssPath = "node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css",
 		nameExtractor = /[A-Za-z]+(?=\.less)/,
 		tasks, match, fileName;
 
@@ -43,6 +43,7 @@ gulp.task("css", function(){
 
 		return gulp.src([
 				cfg.cssPath + "reset.less",
+				scrollCssPath,
 				cfg.cssPath + "common.less",
 				cfg.cssPath + fileName + ".less"
 			])

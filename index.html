@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Blank</title>
+	<title>Health Road | Back office</title>
 	<meta charset="UTF-8">
 	<!--meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -33,10 +33,56 @@
 	<link rel="icon" type="image/png" href="assets/images/favicons/96x96.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
-	<link rel="stylesheet" href="build/css/home.bundle.min.css">
+	<link rel="stylesheet" href="build/css/staff.bundle.min.css">
 </head>
 <body>
+	<div id="page">
+		<header id="header">
+			<div id="toggle-menu-loader" >
+				<div class="inner loader">
+					<span class="circle"></span>
+					<span class="circle"></span>
+					<span class="circle"></span>
+					<span class="circle"></span>
+					<span class="circle"></span>
+				</div>
+				<div class="inner menu-button">
+					<a href="#" class="hrd-squares"></a>
+				</div>
+			</div>
+			<div class="entitled"><h1>Дорога Здоровья</h1></div>
+			<div id="status-panel-holder">
+				<div class="inner"></div>
+				<div class="inner success-holder"></div>
+				<div class="inner error-holder"></div>
+			</div>
+		</header>
+		<main id="content">
+			<aside id="navigation-holder">
+				<div class="inner">
+					<nav id="menu-holder">
+						<ul>
+							
+						</ul>
+					</nav>
+				</div>
+			</aside>
+			<section class="outer" id="info-holder">
+				<div class="top-info-panel"></div>
+				<div class="inner">
+					<div id="content-scroll-holder">
+						<div class="inner scroll">
 
-	
+						</div>
+					</div>
+				</div>
+				<div class="bottom-info-panel"></div>
+			</section>
+		</main>
+	</div>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/perfect-scrollbar/dist/js/min/perfect-scrollbar.jquery.min.js"></script>
+
+	<script src="build/js/app/staff.js"></script>
 </body>
 </html>
