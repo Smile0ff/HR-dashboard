@@ -38,7 +38,7 @@
 <body>
 	<div id="page">
 		<header id="header">
-			<div id="toggle-menu-loader" >
+			<div id="toggle-menu-loader">
 				<div class="inner loader">
 					<span class="circle"></span>
 					<span class="circle"></span>
@@ -52,9 +52,37 @@
 			</div>
 			<div class="entitled"><h1>Дорога Здоровья</h1></div>
 			<div id="status-panel-holder">
-				<div class="inner"></div>
-				<div class="inner success-holder"></div>
-				<div class="inner error-holder"></div>
+				<div class="inner default-holder">
+					<div id="breadcrumbs-holder">
+						<ul>
+							<li><a href="#">Панель управление</a></li>
+							<li><a href="#">Пользователи</a></li>
+						</ul>
+					</div>
+					<div id="office-widget">
+						<div class="inner entrance">
+							<a href="#">
+								<span class="text name">Имя пользователя</span>
+								<span class="text role">администратор</span>
+							</a>
+						</div>
+						<div class="inner logout">
+							<a href="#" class="hrd-logout"></a>
+						</div>
+					</div>
+				</div>
+				<div class="inner success-holder">
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+				</div>
+				<div class="inner warning-holder">
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+				</div>
+				<div class="inner error-holder">
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+				</div>
+				<div class="inner info-holder">
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+				</div>
 			</div>
 		</header>
 		<main id="content">
@@ -62,7 +90,48 @@
 				<div class="inner">
 					<nav id="menu-holder">
 						<ul>
-							
+							<li class="active">
+								<a href="#">
+									<span class="icon hrd-staff"></span>
+									<span class="text">Сотрудники</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-user"></span>
+									<span class="text">Клиенты</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-pin"></span>
+									<span class="text">Регионы</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-education"></span>
+									<span class="text">Школы</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-tables"></span>
+									<span class="text">Группы терминалов</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-table"></span>
+									<span class="text">Терминалы</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon hrd-cart"></span>
+									<span class="text">Продукты</span>
+								</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -72,7 +141,7 @@
 				<div class="inner">
 					<div id="content-scroll-holder">
 						<div class="inner scroll">
-
+							
 						</div>
 					</div>
 				</div>
@@ -82,6 +151,8 @@
 	</div>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/perfect-scrollbar/dist/js/min/perfect-scrollbar.jquery.min.js"></script>
+	
+	<script src="build/js/controllers/menuController.js"></script>
 
 	<script src="build/js/app/staff.js"></script>
 </body>
