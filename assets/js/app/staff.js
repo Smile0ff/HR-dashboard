@@ -6,6 +6,7 @@ $(function(){
 		maxScrollbarLength: 40
 	});
 
+	new app.ConfirmController();
 	new app.MenuController();
 
 });

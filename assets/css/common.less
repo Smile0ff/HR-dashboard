@@ -3,7 +3,7 @@
 @import "hrd-icons.less";
 @import "scroll-scheme.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	Fonts start								  				*/
+/*	Fonts start								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 h1, h2, h3, h4, h5, h6, span, p, time, small, a{
 	font-family: "Ubuntu", sans-serif;
@@ -19,11 +19,11 @@ a{
 	outline: none;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	Fonts end								  				*/
+/*	Fonts end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start							 					*/
+/*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #page,
 .outer,
@@ -42,11 +42,11 @@ a{
 	background-size: cover;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout end								 				*/
+/*	layout end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	header start							  				*/
+/*	header start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #header{
 	width: 100%;
@@ -97,7 +97,7 @@ a{
 			display: block;
 			width: 100%;
 			height: 100%;
-			font-size: 2em;
+			font-size: 1.5em;
 			color: @grey;
 			transition: all .5s @easing;
 			&:before{
@@ -152,11 +152,11 @@ a{
 	100% { transform: rotate(270deg) translateX(10px) scale(1); }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	header end											*/
+/*	header end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	status panel start 						  				*/
+/*	status panel start 						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #status-panel-holder{
 	width: ~"calc(100% - 400px)";
@@ -220,14 +220,14 @@ a{
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	status panel end 						  				*/
+/*	status panel end 						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	breadcrumbs start										*/
+/*	breadcrumbs start						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #breadcrumbs-holder{
-	width: ~"calc(100% - 200px)";
+	width: ~"calc(100% - 300px)";
 	height: 60px;
 	float: left;
 	overflow: hidden;
@@ -270,26 +270,27 @@ a{
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	breadcrumbs end 										*/
+/*	breadcrumbs end 						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	office widget start 										*/
+/*	office widget start 					  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #office-widget{
-	width: 200px;
+	width: 300px;
 	height: 60px;
 	float: left;
 	overflow: hidden;
 	& > .inner{
 		height: 100%;
-		float: left;
+		float: right;
 		a{
 			display: block;
 			height: 60px;
 		}
 		&.entrance{
-			width: 140px;
+			width: 160px;
+			margin-right: 20px;
 			.text{
 				display: block;
 				width: 100%;
@@ -305,10 +306,13 @@ a{
 				}
 			}
 		}
-		&.logout{
+		&.logout,
+		&.settings{
 			width: 60px;
+			border-left: 1px solid darken(@black, 100%);
+			box-sizing: border-box;
 			a{
-				font-size: 2em;
+				font-size: 1.5em;
 				text-align: center;
 				color: @grey;
 				transition: all .5s @easing;
@@ -324,11 +328,11 @@ a{
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	office widget end 										*/
+/*	office widget end 						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	menu start 								 			*/
+/*	menu start 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #menu-holder{
 	width: 100%;
@@ -387,11 +391,11 @@ a{
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	menu end 								 				*/
+/*	menu end 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	content start 							  				*/
+/*	content start 							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content{
 	width: 100%;
@@ -412,6 +416,7 @@ a{
 		width: 100%;
 		height: ~"calc(100% - 120px)";
 		position: relative;
+		margin-top: 60px;
 		padding: 30px 0 30px 30px;
 		box-sizing: border-box;
 		overflow: hidden;
@@ -420,6 +425,9 @@ a{
 	& > .bottom-info-panel{
 		width: 100%;
 		height: 60px;
+		position: absolute;
+		top: 0;
+		left: 0;
 		background: @black;
 		overflow: hidden;
 	}
@@ -430,6 +438,8 @@ a{
 	& > .bottom-info-panel{
 		border-top: 1px solid darken(@black, 100%);
 		box-sizing: border-box;
+		top: auto;
+		bottom: 0;
 	}
 }
 #content-scroll-holder{
@@ -465,13 +475,9 @@ a{
 	}
 }
 #page.menu-active{
-	#info-holder{
-		width: ~"calc(100% - 60px)";
-	}
-	#navigation-holder{
-		width: 60px;
-	}
+	#info-holder{ width: ~"calc(100% - 60px)"; }
+	#navigation-holder{ width: 60px; }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	content start 							  				*/
+/*	content end 							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

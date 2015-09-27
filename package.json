@@ -29,6 +29,7 @@
     "gulp-rename": "^1.2.2",
     "imagemin-pngquant": "^4.2.0",
     "jquery": "^2.1.4",
+    "jquery.inputmask": "^3.2.0",
     "perfect-scrollbar": "^0.6.4"
   }
 }

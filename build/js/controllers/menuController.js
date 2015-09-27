@@ -14,13 +14,9 @@ var app = app || {};
 		_events: _events,
 		handleMenu: handleMenu
 	}
-
 	function initialize(){
-
 		this.button = $("#toggle-menu-loader > .menu-button");
 		this._events();
-
-
 	}
 	function _events(){
 		this.button.on("click", $.proxy(this.handleMenu, this));

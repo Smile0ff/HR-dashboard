@@ -1,0 +1,146 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+form{
+	width: 100%;
+	max-width: 1520px;
+	margin: 0 auto;
+	overflow: hidden;
+	& > .message-holder{
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		p{ padding: 10px; }
+		ul{
+			display: block;
+			width: 100%;
+			overflow: hidden;
+		}
+		li{
+			display: block;
+			p{
+				padding: 10px;
+				span{
+					font-weight: bold;
+					margin-right: 10px;
+				}
+			}
+		}
+		&.error-active{
+			background: @errorRedLight;
+			border: 1px solid @errorRedLight;
+			p{
+				color: @errorRedDark;
+				span{ color: @errorRedDark; }
+			}
+			li{ color: @errorRedDark; }
+		}
+		&.info-active{
+			background: @infoBlueLight;
+			border: 1px solid @infoBlueLight;
+			p{
+				color: @infoBlueDark;
+				span{ color: @infoBlueDark; }
+			}
+			li{ color: @infoBlueDark; }
+		}
+	}
+}
+
+::-webkit-input-placeholder { color: @grey; }
+:-moz-placeholder { color: @grey; }
+::-moz-placeholder { color: @grey; }
+:-ms-input-placeholder { color: @grey; }
+
+.field-holder{
+	width: 100%;
+	height: 60px;
+	min-height: 60px;
+	margin: 20px auto;
+	overflow: hidden;
+	.field{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"]{
+	display: block;
+	width: 100%;
+	height: 60px;
+	border: 1px solid darken(@black, 100%);
+	box-sizing: border-box;
+	font-family: "Ubuntu", sans-serif;
+	color: @black;
+	padding-left: 70px;
+	box-sizing: border-box;
+	line-height: 58px;
+	font-size: .875em;
+	transition: all .5s @easing;
+	overflow: hidden;
+	& + label{
+		width: 58px;
+		height: 58px;
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		background: @black;
+		border-right: 1px solid darken(@black, 100%);
+		box-sizing: border-box;
+		transition: all .5s @easing;
+		overflow: hidden;
+		& > span{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: @white;
+			font-size: 1.25em;
+			text-align: center;
+			&:before{
+				line-height: 58px;
+			}
+		}
+	}
+	&:hover,
+	&:focus{
+		& + label{
+			background: @green;
+		}
+	}
+}
+
+button[type="submit"]{
+	display: block;
+	width: 200px;
+	height: 60px;
+	border: none;
+	padding: 0;
+	background: transparent;
+	margin: 20px auto;
+	overflow: hidden;
+	& > span{
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: @black;
+		color: @white;
+		line-height: 58px;
+		border: 1px solid darken(@black, 100%);
+		box-sizing: border-box;
+		transition: all .5s @easing;
+		overflow: hidden;
+	}
+	&:hover{
+		span{
+			background: @green;
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -30,7 +30,10 @@ gulp.task("fonts", function(){
 
 gulp.task("css", function(){
 
-	var fileList = ["staff.less"],
+	var fileList = [
+			"auth.less",
+			"staff.less"
+		],
 		scrollCssPath = "node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css",
 		nameExtractor = /[A-Za-z]+(?=\.less)/,
 		tasks, match, fileName;
