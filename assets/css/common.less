@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500&subset=latin,cyrillic);
 @import "settings.less";
-@import "hrd-icons.less";
-@import "scroll-scheme.less";
+@import "modules/hrd-icons.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	Fonts start								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -334,6 +333,26 @@ a{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	menu start 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#navigation-holder{
+	width: 400px;
+	height: 100%;
+	float: left;
+	background: transparent;
+	border-right: 1px solid darken(@black, 100%);
+	box-sizing: border-box;
+	transition: all .5s @easing;
+	overflow: hidden;
+	& > .inner{
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		background: fade(@black, 85%);
+		padding-right: 20px;
+		overflow: auto;
+		overflow-x: hidden;
+	}
+}
+
 #menu-holder{
 	width: 100%;
 	height: auto;
@@ -354,6 +373,25 @@ a{
 			display: block;
 			width: 100%;
 			height: 60px;
+			position: relative;
+			&:before{
+				display: block;
+				width: 60px;
+				height: 20px;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				border-radius: 5px;
+				background: @black;
+				content: attr(data-count);
+				color: @white;
+				text-align: center;
+				line-height: 20px;
+				font-size: .875em;
+				transition: all .25s @easing;
+				transform: scale(1);
+				overflow: hidden;
+			}
 			span{
 				display: inline-block;
 				color: @white;
@@ -390,6 +428,14 @@ a{
 		}
 	}
 }
+
+#page.menu-active{
+	#info-holder{ width: ~"calc(100% - 60px)"; }
+	#navigation-holder{ width: 60px; }
+	#menu-holder ul li a:before{
+		transform: scale(0);
+	}
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	menu end 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -412,14 +458,19 @@ a{
 	position: relative;
 	transition: all .5s @easing;
 	overflow: hidden;
-	& > .inner{
+	.outer.scrollable-holder{
 		width: 100%;
-		height: ~"calc(100% - 120px)";
-		position: relative;
-		margin-top: 60px;
-		padding: 30px 0 30px 30px;
+		height: 100%;
+		padding: 81px 0 81px 20px;
 		box-sizing: border-box;
 		overflow: hidden;
+	}
+	.inner.scrollable{
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		padding-right: 20px;
+		overflow: auto;
 	}
 	& > .top-info-panel,
 	& > .bottom-info-panel{
@@ -433,51 +484,68 @@ a{
 	}
 	& > .top-info-panel{
 		border-bottom: 1px solid darken(@black, 100%);
-		box-sizing: border-box;
 	}
 	& > .bottom-info-panel{
 		border-top: 1px solid darken(@black, 100%);
-		box-sizing: border-box;
 		top: auto;
 		bottom: 0;
 	}
 }
-#content-scroll-holder{
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	position: relative;
-	overflow: hidden;
-	& > .inner.scroll{
-		width: 100%;
-		padding-right: 30px;
-		box-sizing: border-box;
-		overflow: hidden;
-	}
-}
-#navigation-holder{
-	width: 400px;
-	height: 100%;
+#action-holder{
+	width: ~"calc(100% - 480px)";
+	height: 60px;
 	float: left;
-	background: transparent;
-	border-right: 1px solid darken(@black, 100%);
-	box-sizing: border-box;
-	transition: all .5s @easing;
 	overflow: hidden;
-	& > .inner{
+	&.edit{
 		width: 100%;
-		height: 100%;
-		min-height: 100%;
-		background: fade(@black, 85%);
-		padding-right: 20px;
-		overflow: auto;
-		overflow-x: hidden;
+		float: none;
 	}
-}
-#page.menu-active{
-	#info-holder{ width: ~"calc(100% - 60px)"; }
-	#navigation-holder{ width: 60px; }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	content end 							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	buttons start 							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*[class^="btn"]{
+	width: 180px;
+	height: 60px;
+	position: relative;
+	overflow: hidden;
+	& > a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		font-size: 1em;
+		text-align: center;
+		line-height: 60px;
+		background: @black;
+		color: @white;
+		transition: all .5s @easing;
+		overflow: hidden;
+		span.icon{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 10px;
+			color: inherit;
+		}
+		&:hover{
+			background: @green;
+		}
+	}
+}
+.btn-add,
+.btn-save{
+	&.back{
+		width: 300px;
+		a{
+			background: @grey;
+			&:hover{ background: @green; }
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	buttons end 							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

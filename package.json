@@ -18,6 +18,9 @@
   "author": "CHEERS! Unlimited",
   "license": "ISC",
   "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "glob": "^5.0.15",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-concat-css": "^2.2.0",
@@ -30,6 +33,7 @@
     "imagemin-pngquant": "^4.2.0",
     "jquery": "^2.1.4",
     "jquery.inputmask": "^3.2.0",
-    "perfect-scrollbar": "^0.6.4"
+    "perfect-scrollbar": "^0.6.4",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

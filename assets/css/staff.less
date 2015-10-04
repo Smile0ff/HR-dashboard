@@ -1,7 +1,9 @@
 @import "settings.less";
-@import "pagination.less";
-@import "tables.less";
-@import "confirm.less";
+@import "modules/tabs.less";
+@import "modules/pagination.less";
+@import "modules/tables.less";
+@import "modules/forms.less";
+@import "modules/confirm.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	top panel start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -33,4 +35,21 @@
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	top panel end							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	add staff start							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#action-holder.manage-holder{
+	width: 100%;
+	.btn-add{
+		float: right;
+		border-right: 1px solid darken(@black, 100%);
+		border-left: 1px solid darken(@black, 100%);
+		box-sizing: border-box;
+		&.back{ border-left: none; }
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	add staff end							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

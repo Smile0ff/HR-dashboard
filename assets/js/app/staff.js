@@ -1,12 +1,16 @@
-var app = app || {};
+"use strict";
+
+import jQuery from "jquery";
+import { Menu } from "../controllers/menu";
+import { Confirm } from "../controllers/confirm";
+
+window.$ = window.jQuery = jQuery;
 
 $(function(){
 
-	$("#content-scroll-holder").perfectScrollbar({
-		maxScrollbarLength: 40
-	});
+	new Menu;
+	new Confirm;
 
-	new app.ConfirmController();
-	new app.MenuController();
+	$(".tabs-holder").tabby();
 
 });
