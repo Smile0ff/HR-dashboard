@@ -1,16 +1,16 @@
 "use strict";
 
-import jQuery from "jquery";
-import { Menu } from "../controllers/menu";
-import { Confirm } from "../controllers/confirm";
+import $ from "jquery";
+import tabby from "tabby";
+import Menu from "../controllers/menu";
+import Confirm from "../controllers/confirm";
 
-window.$ = window.jQuery = jQuery;
+window.$ = $;
 
 $(function(){
 
-	new Menu;
-	new Confirm;
+	new Menu();
+	new Confirm();
 
 	$(".tabs-holder").tabby();
-
 });

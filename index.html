@@ -43,8 +43,8 @@
 				<form action="#" method="POST" id="auth-form">
 					<div class="field-holder">
 						<div class="field">
-							<input type="tel" name="user[phone]" value="" placeholder="+38 (999) 999-99-99" id="auth-user-phone"  data-inputmask="'mask': '+38 (999) 999 9999'">
-							<label for="auth-user-phone"><span class="hrd-phone"></span></label>
+							<input type="email" name="user[email]" value="" placeholder="youremail@example.com" id="auth-user-email">
+							<label for="auth-user-email"><span class="hrd-email"></span></label>
 						</div>
 					</div>
 					<div class="field-holder">
@@ -60,10 +60,6 @@
 			</div>
 		</main>
 	</div>
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/jquery.inputmask/dist/inputmask/inputmask.js"></script>
-	<script src="node_modules/jquery.inputmask/dist/inputmask/jquery.inputmask.js"></script>
-
-	<script src="build/js/app/auth.js"></script>
+	<script src="build/js/auth.bundle.min.js"></script>
 </body>
 </html>

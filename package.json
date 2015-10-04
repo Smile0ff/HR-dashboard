@@ -18,22 +18,30 @@
   "author": "CHEERS! Unlimited",
   "license": "ISC",
   "devDependencies": {
-    "babelify": "^6.3.0",
-    "browserify": "^11.2.0",
     "glob": "^5.0.15",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-concat-css": "^2.2.0",
     "gulp-imagemin": "^2.3.0",
+    "gulp-jspm": "^0.3.2",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.2.1",
     "gulp-notify": "^2.2.0",
-    "gulp-order": "^1.1.1",
     "gulp-rename": "^1.2.2",
     "imagemin-pngquant": "^4.2.0",
-    "jquery": "^2.1.4",
-    "jquery.inputmask": "^3.2.0",
-    "perfect-scrollbar": "^0.6.4",
-    "vinyl-source-stream": "^1.1.0"
+    "jspm": "^0.16.11"
+  },
+  "jspm": {
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "jquery": "github:components/jquery@^2.1.4"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
+      "traceur": "github:jmcriffey/bower-traceur@0.0.91",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.91"
+    }
   }
 }

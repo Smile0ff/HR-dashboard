@@ -1,18 +1,15 @@
 var gulp = require("gulp"),
-	cfg = require("./config"),
+	cfg = require("./hrd.config"),
 
 	rename = require("gulp-rename"),
 	notify = require("gulp-notify"),
-	order = require("gulp-order"),
 
 	compileLess = require("gulp-less"),
 	autoprefixer = require("gulp-autoprefixer"),
 	minifyCSS = require("gulp-minify-css"),
 	concatCSS = require("gulp-concat-css"),
 
-	source = require("vinyl-source-stream"),
-	browserify = require("browserify"),
-	babelify = require("babelify"),
+	jspm = require("gulp-jspm"),
 	glob = require("glob"),
 
 	imagemin = require("gulp-imagemin"),
@@ -21,22 +18,20 @@ var gulp = require("gulp"),
 
 gulp.task("js", function(){
 	var files = glob.sync("assets/js/app/*.js"),
-		browserifed, fileName;
+		fileName;
 
 	files.map(function(entryFile){
 
 		fileName = entryFile.match(/\w+(?=\.js)/gi);
-		browserifed = browserify({ entries: [entryFile], debug: true });
 		
-		browserifed
-			.transform(babelify)
-			.bundle()
-			.pipe(source(fileName + ".js"))
-			.pipe(rename({ extname: ".bundle.min.js" }))
-			.pipe(gulp.dest("./build/js"))
-			.pipe(notify({ message: "js done", onLast: true }));
-
-		return browserifed;
+		return gulp.src(entryFile)
+					.pipe(jspm({selfExecutingBundle: true}))
+					.pipe(rename({
+						basename: fileName,
+						extname: ".bundle.min.js"
+					}))
+					.pipe(gulp.dest(cfg.buildPath + "js"))
+					.pipe(notify({ message: "js done", onLast: true }));
 	});
 });
 

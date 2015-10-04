@@ -1,6 +1,6 @@
 "use strict";
 
-class Confirm{
+export default class Confirm{
 	constructor(){
 		this.el = $("#confirm-holder");
 		this.buttons = $(".delete-button");
@@ -37,5 +37,3 @@ class Confirm{
 		return false;
 	}
 }
-
-export{ Confirm };

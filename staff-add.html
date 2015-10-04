@@ -148,16 +148,16 @@
 			<section class="outer" id="info-holder">
 				<div class="tabs-holder">
 					<ul>
-						<li class="active">
+						<li class="tab-label active">
 							<a href="#">Персональные данные</a>
 						</li>
-						<li>
+						<li class="tab-label">
 							<a href="#">Системные данные</a>
 						</li>
 					</ul>
-					<div class="tabs-content-holder">
-						<div class="tabs-content active">1</div>
-						<div class="tabs-content">2</div>
+					<div class="tab-content-holder">
+						<div class="tab-content active">1</div>
+						<div class="tab-content">2</div>
 					</div>
 				</div>
 				<div class="bottom-info-panel">
@@ -181,6 +181,10 @@
 			</div>
 		</main>
 	</div>
-	<script src="build/js/staff.bundle.min.js"></script>
+	<script src="jspm_packages/system.js"></script>
+	<script src="jspm.config.js"></script>
+	<script>
+		System.import("assets/js/app/staff");
+	</script>
 </body>
 </html>

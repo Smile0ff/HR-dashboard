@@ -1,5 +1,7 @@
-var app = app || {};
+"use strict";
+
+import $ from "jquery";
 
 $(function(){
-	$(":input").inputmask();
+
 });

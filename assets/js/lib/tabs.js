@@ -1,34 +1,41 @@
-(function($, root){
+(($, root) => {
 
 	"use strict";
 
-	var pluginName = "tabby",
-		_defaults = {};
+	var _defaults = {};
 
-	function Plugin(el, options){
-		this.el = $(el);
-		this._options = $.extend({}, _defaults, options);
+	class Plugin{
+		constructor(el, options){
+			this.el = $(el);
+			this._options = $.extend({}, _defaults, options);
 
-		this.initialize.apply(this, arguments);
+			this.initalize.apply(this, arguments);
+		}
+		
+		initalize(){
+			this._events();
+		}
+		_events(){
+			this.el.on("click", ".tab-label", $.proxy(this.handleTab, this));
+		}
+		handleTab(e){
+			var target = $(e.target).closest(".tab-label"),
+				parent = target.closest(".tabs-holder"),
+				tabIndex  = target.index();
+
+			target.addClass("active").siblings(".tab-label").removeClass("active");
+			parent.find(".tab-content").eq(tabIndex).addClass("active").siblings(".tab-content").removeClass("active");
+
+			return false;
+		}
 	}
-	Plugin.prototype = {
-		initialize: initialize,
-		_events: _events
-	}
 
-	function initialize(){
-		console.log(this);
-	}
-	function _events(){
-
-	}
-
-	$.fn[pluginName] = function(options){
+	$.fn.tabby = function(options){
 		return this.each(function(){
-			if(!$.data(this, "plugin-" + pluginName)){
-				$.data(this, "plugin-" + pluginName, new Plugin(this, options));
+			if(!$.data(this, "plugin-Tabby")){
+				$.data(this, "plugin-Tabby", new Plugin(this, options));
 			}
 		});
 	}
 
-})(jQuery, window);
+})($, window);

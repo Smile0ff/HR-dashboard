@@ -1,6 +1,6 @@
 "use strict";
 
-class Menu{
+export default class Menu{
 	constructor(){
 		this.el = $("#page");
 		this.initialize.apply(this, arguments);
@@ -15,6 +15,4 @@ class Menu{
 		this.el.toggleClass("menu-active");
 		return false;
 	}
-}
-
-export{ Menu };
+};
