@@ -1,7 +1,7 @@
 @import "modules/common.less";
 @import "modules/forms.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	auth start								  */
+/*	auth start								 				 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content{
 	width: 100%;
@@ -37,10 +37,9 @@
 }
 input[type="email"],
 input[type="password"]{
-	width: 100%;
+	width: ~"calc(100% - 60px)";
 	height: 60px;
-	padding-right: 60px;
-	box-sizing: border-box;
+	margin-left: 60px;
 	& + label,
 	& + label.error + label{
 		width: 60px;
@@ -59,5 +58,5 @@ input[type="password"]{
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	auth start								  */
+/*	auth start								 				 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

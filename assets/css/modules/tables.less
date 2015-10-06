@@ -1,8 +1,9 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	tables start							  */
+/*	tables start							  					*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 table{
-	width: 100%;
+	width: ~"calc(100% - 20px)";
+	margin-right: 20px;
 	border: 1px solid darken(@black, 100%);
 	box-sizing: border-box;
 	border-collapse: collapse;
@@ -22,39 +23,33 @@ table{
 			background: @white;
 			color: @black;
 			text-align: center;
+			font-size: .875em;
 			line-height: 58px;
 			overflow: hidden;
 		}
 		& > a{
 			transition: all .5s @easing;
 			&:hover{
-				background: @black;
-				color: @white;
+				color: @green;
 			}
 		}
 		&.small-fixed{ width: 60px; }
 		&.double-small-fixed{ width: 120px; }
+		&.bind-holder,
+		&.delete-holder,
 		&.edit-holder{
-			a{
-				font-size: 1.125em;
-				&:before{
-					display: inline-block;
-					vertical-align: middle;
-				}
-			}
-		}
-		&.delete-holder{
-			.btn-delete{
+			.btn-bind,
+			.btn-delete,
+			.btn-edit{
 				a{
-					background: transparent;
-					color: @black;
 					border: none;
 				}
-				&:hover{
-					a{
-						background: @black;
-						color: @white;
-					}
+			}
+			&.double-small-fixed{
+				.btn-bind,
+				.btn-delete,
+				.btn-edit{
+					width: 120px;
 				}
 			}
 		}
@@ -64,9 +59,12 @@ table{
 		& > span{
 			background: @black;
 			color: @white;
+			&:first-letter{
+				text-transform: uppercase;
+			}
 		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	tables end								  */
+/*	tables end								  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

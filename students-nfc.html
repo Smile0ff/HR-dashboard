@@ -149,10 +149,10 @@
 				<div class="top-info-panel">
 					<div class="inner categories-list-holder">
 						<ul>
-							<li class="active">
+							<li>
 								<a href="#">Персональные данные</a>
 							</li>
-							<li>
+							<li class="active">
 								<a href="#">NFC-метки</a>
 							</li>
 						</ul>
@@ -160,92 +160,78 @@
 				</div>
 				<div class="outer scrollable-holder">
 					<div class="inner scrollable">
-						<form action="#" method="POST" id="student-add-form">
-							<div class="field-holder">
-								<input type="text" name="student[surname]" value="" placeholder="Введите фаимлию ученика" id="student-surname" data-rule-required="true" data-msg-required="Вы не ввели фамилию ученика">
-								<label for="student-surname">Фамилия</label>
-							</div>
-							<div class="field-holder">
-								<input type="text" name="student[name]" value="" placeholder="Введите имя ученика" id="student-name" data-rule-required="true" data-msg-required="Вы не ввели имя ученика">
-								<label for="student-name">Имя</label>
-							</div>
-							<div class="field-holder">
-								<input type="text" name="student[patronymic]" value="" placeholder="Введите отчество ученика" id="student-patronymic" data-rule-required="true" data-msg-required="Вы не ввели отчество ученика">
-								<label for="student-patronymic">Отчество</label>
-							</div>
-							<div class="field-holder trpl-field">
-								<p>Выберите пол:</p>
-								<div class="field">
-									<input type="radio" name="student[gender]" value="female" id="student-gender-female" checked>
-									<label for="student-gender-female">
-										<span class="radio"></span>
-										<span class="text">Женский</span>
-									</label>
-								</div>
-								<div class="field">
-									<input type="radio" name="student[gender]" value="male" id="student-gender-male">
-									<label for="student-gender-male">
-										<span class="radio"></span>
-										<span class="text">Мужской</span>
-									</label>
-								</div>
-							</div>
-							<div class="field-holder">
-								<input type="text" name="student[birthday]" value="" placeholder="00/00/0000" id="student-birthday" data-rule-required="true" data-msg-required="Вы не ввели дату рождения ученика" data-mask="00/00/0000">
-								<label for="student-birthday">Дата рождения</label>
-							</div>
-							<div class="field-holder">
-								<input type="text" name="student[time]" value="" placeholder="00:00:00" id="student-time" data-rule-required="true" data-msg-required="Вы не ввели время рождения ученика" data-mask="00:00:00">
-								<label for="student-time">Время рождения</label>
-							</div>
-							<div class="select-holder">
-								<div class="btn-select">
-									<a href="#">
-										<div class="title-holder">
-											<span class="title">Школа</span>
-											<span class="icon hrd-list"></span>
-										</div>
-										<span class="text">Выберите школу ученика</span>
-									</a>
-								</div>
-								<!--span class="error-holder">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span-->
-								<div class="select-list">
-									<div class="outer">
-										<div class="inner">
-											<ul>
-												<li class="option-item" data-option="1"><span class="option-name">СШ №1</span></li>
-												<li class="option-item" data-option="2"><span class="option-name">СШ №2</span></li>
-												<li class="option-item" data-option="3"><span class="option-name">СШ №3</span></li>
-												<li class="option-item" data-option="4"><span class="option-name">СШ №4</span></li>
-												<li class="option-item" data-option="4"><span class="option-name">СШ №5</span></li>
-												<li class="option-item" data-option="4"><span class="option-name">СШ №6</span></li>
-												<li class="option-item" data-option="4"><span class="option-name">СШ №7</span></li>
-											</ul>
-										</div>
+						<table>
+							<tr>
+								<th class="small-fixed">
+									<a href="#">ID</a>
+								</th>
+								<th>
+									<a href="#">Название метки</a>
+								</th>
+								<th class="double-small-fixed">
+									<span>управление</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span>1</span>
+								</td>
+								<td>
+									<a href="#">AA123456</a>
+								</td>
+								<td class="double-small-fixed delete-holder">
+									<div class="btn-delete">
+										<a href="#" class="icon hrd-delete"></a>
 									</div>
-								</div>
-								<input type="hidden" name="student[school]" value="">
-							</div>
-							<div class="field-holder dbl-field">
-								<div class="field">
-									<input type="text" name="student[balance]" value="" placeholder="0.000,00" id="student-balance" data-rule-required="true" data-msg-required="Баланс не может быть пустым" data-mask="#.##0,00" data-mask-reverse="true">
-									<label for="student-balance">Баланс на счету</label>
-								</div>
-								<div class="field">
-									<input type="text" name="student[limit]" value="" placeholder="0.000,00" id="student-limit" data-rule-required="true" data-msg-required="Лимит не задан" data-mask="#.##0,00" data-mask-reverse="true">
-									<label for="student-limit">Дневной лимит средств</label>
-								</div>
-							</div>
-						</form>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span>1</span>
+								</td>
+								<td>
+									<a href="#">AA123456</a>
+								</td>
+								<td class="double-small-fixed delete-holder">
+									<div class="btn-delete">
+										<a href="#" class="icon hrd-delete"></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span>1</span>
+								</td>
+								<td>
+									<a href="#">AA123456</a>
+								</td>
+								<td class="double-small-fixed delete-holder">
+									<div class="btn-delete">
+										<a href="#" class="icon hrd-delete"></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span>1</span>
+								</td>
+								<td>
+									<a href="#">AA123456</a>
+								</td>
+								<td class="double-small-fixed delete-holder">
+									<div class="btn-delete">
+										<a href="#" class="icon hrd-delete"></a>
+									</div>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 				<div class="bottom-info-panel">
 					<div id="action-holder" class="manage-holder">
-						<div class="btn-delete black">
-							<a href="#" class="icon hrd-delete"></a>
+						<div class="btn-connect">
+							<a href="#">Привязать NFC-метку</a>
 						</div>
-						<button type="submit" form="student-add-form" class="btn-save back"><span>Сохранить и вернуться</span></button>
-						<button type="submit" form="student-add-form" class="btn-save"><span>Сохранить</span></button>
 					</div>
 				</div>
 			</section>
