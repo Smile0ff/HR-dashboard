@@ -12,7 +12,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
   shim: {
     "packages": {
       "assets/js/lib/tabs": {
@@ -20,6 +19,12 @@ System.config({
         "format": "global",
         "deps": "jquery",
         "exports": "$.tabby"
+      },
+      "assets/js/lib/select": {
+        "main": "selectify",
+        "format": "global",
+        "deps": "jquery",
+        "exports": "$.selectify"
       }
     }
   },
@@ -29,11 +34,17 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.25",
     "core-js": "npm:core-js@1.2.1",
     "jquery": "github:components/jquery@2.1.4",
+    "jquery-mask-plugin": "npm:jquery-mask-plugin@1.13.4",
+    "jquery-validation": "github:jzaefferer/jquery-validation@1.14.0",
+    "selectify": "assets/js/lib/select",
     "tabby": "assets/js/lib/tabs",
     "traceur": "github:jmcriffey/bower-traceur@0.0.91",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.91",
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
+    },
+    "github:jzaefferer/jquery-validation@1.14.0": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:babel-runtime@5.8.25": {
       "process": "github:jspm/nodelibs-process@0.1.1"

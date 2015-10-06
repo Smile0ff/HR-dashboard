@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500&subset=latin,cyrillic);
+@import "reset.less";
 @import "settings.less";
-@import "modules/hrd-icons.less";
+@import "hrd-icons.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	Fonts start								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -491,6 +492,32 @@ a{
 		bottom: 0;
 	}
 }
+.categories-list-holder{
+	width: 100%;
+	height: 60px;
+	overflow: hidden;
+	li{
+		display: block;
+		width: 160px;
+		height: 60px;
+		float: left;
+		overflow: hidden;
+		& > a{
+			display: block;
+			line-height: 60px;
+			padding: 0 20px;
+			border-right: 1px solid darken(@black, 100%);
+			box-sizing: border-box;
+			color: @white;
+			text-align: center;
+			transition: all .5s @easing;
+		}
+		&:hover,
+		&.active{
+			a{ background: @green; }
+		}
+	}
+}
 #action-holder{
 	width: ~"calc(100% - 480px)";
 	height: 60px;
@@ -499,6 +526,22 @@ a{
 	&.edit{
 		width: 100%;
 		float: none;
+	}
+	.btn-add{
+		a{ border-right: 1px solid darken(@black, 100%); }
+	}
+	&.manage-holder{
+		width: 100%;
+		form{
+			width: ~"calc(100%)";
+			float: left;
+		}
+		.btn-delete{
+			float: left;
+			a{
+				border-right: 1px solid darken(@black, 100%);	
+			}
+		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -524,6 +567,7 @@ a{
 		background: @black;
 		color: @white;
 		transition: all .5s @easing;
+		box-sizing: border-box;
 		overflow: hidden;
 		span.icon{
 			display: inline-block;
@@ -546,6 +590,35 @@ a{
 		}
 	}
 }
+.btn-delete{
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	& > a{
+		font-size: 1.125em;
+		color: @white;
+		&:before{
+			line-height: 60px;
+		}
+		&:hover{
+			background: @errorRedDark;
+		}
+	}
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	buttons end 							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	icons start 							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.icon{
+	font-size: 1.125em;
+	&:before{
+		display: inline-block;
+		line-height: 60px;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	icons end 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

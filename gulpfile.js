@@ -44,28 +44,16 @@ gulp.task("fonts", function(){
 
 gulp.task("css", function(){
 
-	var fileList = [
-			"auth.less",
-			"staff.less"
-		],
-		scrollCssPath = "node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css",
-		nameExtractor = /[A-Za-z]+(?=\.less)/,
-		tasks, match, fileName;
+	var files = glob.sync(cfg.cssPath + "*.less"),
+		fileName;
 
-	tasks = fileList.map(function(entry){
+	files.map(function(entryFile){
 		
-		match = entry.match(nameExtractor);
-		if(!match) return;
-		fileName = match[0];
+		fileName = entryFile.match(/\w+(?=\.less)/)[0];
 
-		return gulp.src([
-				cfg.cssPath + "reset.less",
-				scrollCssPath,
-				cfg.cssPath + "common.less",
-				cfg.cssPath + fileName + ".less"
-			])
+		return gulp.src(entryFile)
 			.pipe(compileLess())
-			.pipe(concatCSS(fileName + ".bundle.css"))
+			.pipe(concatCSS(fileName + ".less"))
 			.pipe(autoprefixer({
 				configbrowsers: ["last 4 versions"],
 				cascade: true,
@@ -73,7 +61,10 @@ gulp.task("css", function(){
 				add: true
 			}))
 			.pipe(minifyCSS({processImport: false}))
-			.pipe(rename({extname: ".min.css"}))
+			.pipe(rename({
+				basename: fileName,
+				extname: ".bundle.min.css"
+			}))
 			.pipe(gulp.dest(cfg.buildPath + "css"))
 			.pipe(notify({message: "css done", onLast: true}));
 	});
@@ -93,9 +84,9 @@ gulp.task("images", function(){
 });
 
 gulp.task("watcher", function(){
-	gulp.watch(cfg.jsPath + "**/*.js", ["js"]);
+	//gulp.watch(cfg.jsPath + "**/*.js", ["js"]);
 	gulp.watch(cfg.cssPath + "**/*.less", ["css"]);
 	gulp.watch(cfg.imagePath + "**/*.*", ["images"]);
 });
 
-gulp.task("default", ["js", "fonts", "css", "images", "watcher"]);
+gulp.task("default", ["fonts", "css", "images", "watcher"]);

@@ -3,7 +3,7 @@
 export default class Confirm{
 	constructor(){
 		this.el = $("#confirm-holder");
-		this.buttons = $(".delete-button");
+		this.buttons = $(".btn-delete");
 		this.url = "";
 
 		this.initialize.apply(this, arguments);

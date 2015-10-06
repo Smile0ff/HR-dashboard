@@ -42,16 +42,12 @@
 				<h1>Авторизация</h1>
 				<form action="#" method="POST" id="auth-form">
 					<div class="field-holder">
-						<div class="field">
-							<input type="email" name="user[email]" value="" placeholder="youremail@example.com" id="auth-user-email">
-							<label for="auth-user-email"><span class="hrd-email"></span></label>
-						</div>
+						<input type="email" name="user[email]" value="" placeholder="youremail@example.com" id="auth-user-email" data-rule-required="true" data-msg-required="Вы не ввели электронный адрес" data-rule-email="true" data-msg-email="Не правильный электронный адрес">
+						<label for="auth-user-email"><span class="icon hrd-email"></span></label>
 					</div>
 					<div class="field-holder">
-						<div class="field">
-							<input type="password" name="user[password]" value="" placeholder="Введите ваш пароль" id="auth-user-password">
-							<label for="auth-user-password"><span class="hrd-lock"></span></label>
-						</div>
+						<input type="password" name="user[password]" value="" placeholder="Введите ваш пароль" id="auth-user-password" data-rule-required="true" data-msg-required="Вы не ввели пароль">
+						<label for="auth-user-password"><span class="icon hrd-lock"></span></label>
 					</div>
 					<button type="submit">
 						<span>Войти</span>
@@ -60,6 +56,10 @@
 			</div>
 		</main>
 	</div>
-	<script src="build/js/auth.bundle.min.js"></script>
+	<script src="jspm_packages/system.js"></script>
+	<script src="jspm.config.js"></script>
+	<script>
+		System.import("assets/js/app/auth.js");
+	</script>	
 </body>
 </html>

@@ -34,13 +34,27 @@ table{
 		}
 		&.small-fixed{ width: 60px; }
 		&.double-small-fixed{ width: 120px; }
-		&.edit-holder,
-		&.delete-holder{
+		&.edit-holder{
 			a{
 				font-size: 1.125em;
 				&:before{
 					display: inline-block;
 					vertical-align: middle;
+				}
+			}
+		}
+		&.delete-holder{
+			.btn-delete{
+				a{
+					background: transparent;
+					color: @black;
+					border: none;
+				}
+				&:hover{
+					a{
+						background: @black;
+						color: @white;
+					}
 				}
 			}
 		}
