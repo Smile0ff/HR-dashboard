@@ -153,6 +153,8 @@ input[type="password"]{
 	}
 }
 
+input[type="file"]{ display: none; }
+
 input[type="checkbox"],
 input[type="radio"]{
 	display: none;
@@ -415,3 +417,80 @@ button[type="submit"]{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	forms select end						  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms files start						 				 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.file-holder{
+	width: 100%;
+	overflow: hidden;
+	input[type="file"] + label{
+		display: block;
+		width: 240px;
+		height: 140px;
+		float: left;
+		background: @black;
+		border: 1px solid darken(@black, 100%);
+		box-sizing: border-box;
+		overflow: hidden;
+		&:hover{
+			.btn-file{
+				span{
+					color: @green;
+				}
+			}
+		}
+	}
+	& > .photo-holder{
+		width: auto;
+		height: 140px;
+		float: left;
+		position: relative;
+		margin-left: 20px;
+		border: 1px solid darken(@black, 100%);
+		box-sizing: border-box;
+		opacity: 0;
+		transition: all .5s @easing;
+		overflow: hidden;
+		img{
+			width: auto;
+			height: 100%;
+			overflow: hidden;
+		}
+		& > .size{
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding: 5px;
+			color: @white;
+			font-size: .875em;
+			background: @black;
+			border-top: 1px solid darken(@black, 100%);
+			border-left: 1px solid darken(@black, 100%);
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+	}
+	&.active{
+		& > .photo-holder{
+			opacity: 1;
+		}
+	}
+	.error-holder{
+		display: block;
+		width: 100%;
+		height: auto;
+		clear: both;
+		font-size: .875em;
+		padding: 0 10px;
+		line-height: 30px;
+		color: @errorRedDark;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	forms files end							 				 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
