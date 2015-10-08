@@ -1,7 +1,6 @@
 "use strict";
 
 const isFileReader = window.File && window.FileReader && window.FileList && window.Blob;
-const kbytes = 1024;
 
 class PhotoPreview{
 	constructor(){
