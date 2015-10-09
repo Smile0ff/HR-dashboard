@@ -677,3 +677,49 @@ a{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	icons end 								  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive start 					 		  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 1366px){
+
+	#header{
+		& > .entitled{ display: none; }
+	}
+
+	#toggle-menu-loader{
+		.inner.menu-button{
+			& > a{ pointer-events: none; }
+			&:hover{
+				a{ color: @grey; }
+			}
+		}
+	}
+	#page.menu-active{
+		#toggle-menu-loader .inner.menu-button a{ color: @grey; }
+	}
+
+	#navigation-holder{ width: 60px; }
+
+	#menu-holder{
+		li{
+			& > a{
+				&:before,
+				span{ display: none; }
+				.icon{ display: block; }
+			}
+		}
+	}
+
+	#info-holder,
+	#status-panel-holder{
+		width: ~"calc(100% - 60px)";
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	adaptive end 							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
