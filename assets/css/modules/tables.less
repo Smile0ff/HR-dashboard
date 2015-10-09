@@ -64,6 +64,32 @@ table{
 			}
 		}
 	}
+	tr.photo-row{
+		td{
+			a, span{ line-height: 120px; }
+			&.photo-preview-holder{
+				width: 120px;
+				height: 120px;
+				.photo-preview{
+					width: 120px;
+					height: 120px;
+					position: relative;
+					overflow: hidden;
+				}
+			}
+			&.bind-holder{
+				width: 120px;
+				height: 120px;
+				& > .btn-bind{
+					width: 120px;
+					height: 120px;
+					a{
+						line-height: 120px;
+					}
+				}
+			}
+		}
+	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	tables end								  				*/

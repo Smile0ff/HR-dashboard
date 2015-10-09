@@ -4,21 +4,26 @@ const isFileReader = window.File && window.FileReader && window.FileList && wind
 
 class PhotoPreview{
 	constructor(){
+		this.initialize();
+	}
+	initialize(){
 		if(!isFileReader) return;
-		this.el = $(".file-holder");
 		this._events();
+		this.holder = [];
 	}
 	_events(){
-		this.el.on("change", $.proxy(this.handleFile, this));
+		$("input[type=file]").on("change", $.proxy(this.handleFile, this));
 	}
 	handleFile(e){
 		e.stopPropagation();
 		e.preventDefault();
-		let 	file = e.target.files[0],
+		let file = e.target.files[0],
 			sizeInMB = 0;
 
+		this.holder = $(e.target).closest(".file-holder");
+
 		if(!file.type || !file.type.match(/image.*/)) return;
-		this.el.find(".error-holder").empty();
+		this.holder.find(".error-holder").empty();
 		sizeInMB = this.convertToMBytes(file.size);
 		this.readFile(file, sizeInMB);
 	}
@@ -27,7 +32,7 @@ class PhotoPreview{
 		return Math.max(bytes / 1024 / 1024, 0.1).toFixed(2) + " MB";
 	}
 	readFile(file, size){
-		let 	self = this,
+		let self = this,
 			reader = new FileReader();
 
 		reader.onload = function(e){
@@ -36,7 +41,7 @@ class PhotoPreview{
 		reader.readAsDataURL(file);
 	}
 	showFile(src, size){
-		this.el.find(".photo-holder").html(`
+		this.holder.find(".photo-holder").html(`
 			<img src="${ src }" alt="preview">
 			<span class="size">${ size }</span>
 		`).andSelf().addClass("active");

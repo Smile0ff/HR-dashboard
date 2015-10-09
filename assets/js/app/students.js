@@ -14,9 +14,9 @@ window.$ = $;
 $(function(){
 
 	new Menu();
-	new Confirm();
 	new Bind();
 	new Status();
+	new Confirm();
 
 	$(".select-holder").selectify();
 	$("form").validate();
