@@ -279,6 +279,7 @@ button[type="submit"]{
 			display: block;
 			width: 100%;
 			height: 60px;
+			background: transparent;
 			.title-holder{
 				display: block;
 				width: 240px;
@@ -310,6 +311,7 @@ button[type="submit"]{
 				display: block;
 				width: ~"calc(100% - 240px)";
 				height: 60px;
+				float: left;
 				font-size: 1em;
 				text-align: left;
 				margin-left: 240px;
@@ -410,6 +412,33 @@ button[type="submit"]{
 			.outer{
 				transform: translateX(-50%) translateY(-50%) scaleY(1);
 				transition: all .5s @easing;
+			}
+		}
+	}
+	&.watch-parent{
+		& > .btn-select{
+			a{
+				width: ~"calc(100% - 60px)";
+				float: left;
+				span.text{
+					border-right: none;
+				}
+			}
+			.btn-view{
+				a{
+					width: 60px;
+					height: 60px;
+					float: left;
+					background: @black;
+					color: @white;
+					border: 1px solid darken(@black, 100%);
+					box-sizing: border-box;
+					&:hover{
+						background: @white;
+						color: @green;
+						border: 1px solid @green;
+					}
+				}
 			}
 		}
 	}
