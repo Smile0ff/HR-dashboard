@@ -163,8 +163,12 @@
 				</div>
 				<div class="outer scrollable-holder">
 					<div class="inner scrollable">
+						<!--div class="empty-holder">
+							<h2>На данный момент контент отсутствует</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab quo, exercitationem, officiis ducimus harum similique porro in eveniet vitae ipsum totam, fuga aliquam! Deserunt sapiente perspiciatis voluptatibus repellat ullam velit.</p>
+						</div-->
 						<form action="#" method="POST" id="add-staff-form">
-							<div class="field-holder">
+							<div class="field-holder required-field">
 								<input type="text" name="staff[username]" value="" placeholder="Введите предпочитаемое имя пользователя" id="staff-username" data-rule-required="true" data-msg-required="Вы не ввели имя пользователя">
 								<label for="staff-username">Имя пользователя</label>
 							</div>
@@ -176,7 +180,7 @@
 								<input type="password" name="staff[confirm-password]" value="" placeholder="Подтвердите ваш пароль" id="staff-confirm-password" data-rule-required="true" data-msg-required="Вы не подтвердили ваш пароль">
 								<label for="staff-confirm-password">Подтвердите пароль</label>
 							</div>
-							<div class="select-holder watch-parent">
+							<div class="select-holder watch-parent required-field">
 								<div class="btn-select">
 									<a href="#">
 										<div class="title-holder">
@@ -185,9 +189,9 @@
 										</div>
 										<span class="text">Выберите должность сотрудника</span>
 									</a>
-									<div class="btn-view">
-										<a href="#" class="icon hrd-view"></a>
-									</div>
+								</div>
+								<div class="btn-view">
+									<a href="#" class="icon hrd-view"></a>
 								</div>
 								<!--span class="error-holder">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span-->
 								<div class="select-list">
