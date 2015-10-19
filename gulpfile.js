@@ -9,7 +9,7 @@ var gulp = require("gulp"),
 	minifyCSS = require("gulp-minify-css"),
 	concatCSS = require("gulp-concat-css"),
 
-	jspm = require("gulp-jspm"),
+	exec = require("child_process").exec,
 	glob = require("glob"),
 
 	imagemin = require("gulp-imagemin"),
@@ -18,20 +18,15 @@ var gulp = require("gulp"),
 
 gulp.task("js", function(){
 	var files = glob.sync("assets/js/app/*.js"),
-		fileName;
+		fileName, bundled;
 
 	files.map(function(entryFile){
-
 		fileName = entryFile.match(/\w+(?=\.js)/gi);
-		
-		return gulp.src(entryFile)
-					.pipe(jspm({selfExecutingBundle: true}))
-					.pipe(rename({
-						basename: fileName,
-						extname: ".bundle.min.js"
-					}))
-					.pipe(gulp.dest(cfg.buildPath + "js"))
-					.pipe(notify({ message: "js done", onLast: true }));
+		bundled = exec("jspm bundle-sfx "+ entryFile +" "+ cfg.buildPath + "js/" + fileName +".bundle.min.js --minify --skip-source-maps", function(err, stdout, stderr){
+			console.log(err);
+			console.log(stdout);
+			console.log(stderr);
+		});
 	});
 });
 

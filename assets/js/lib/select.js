@@ -12,11 +12,11 @@
 		this.initialize.apply(this, arguments);
 	}
 	Plugin.prototype = {
-		initialize,
-		_events,
-		handleOption,
-		openList,
-		closeList
+		initialize: initialize,
+		_events: _events,
+		handleOption: handleOption,
+		openList: openList,
+		closeList: closeList
 	}
 	function initialize(){
 		this._events();
@@ -52,9 +52,7 @@
 
 	$.fn[pluginName] = function(options){
 		return this.each(function(){
-			if(!$.data(this, "plugin-selectify")){
-				$.data(this, "plugin-selectify", new Plugin(this, options));
-			}
+			if(!$.data(this, "plugin-selectify")) $.data(this, "plugin-selectify", new Plugin(this, options));
 		});
 	}
 
