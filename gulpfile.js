@@ -22,11 +22,7 @@ gulp.task("js", function(){
 
 	files.map(function(entryFile){
 		fileName = entryFile.match(/\w+(?=\.js)/gi);
-		bundled = exec("jspm bundle-sfx "+ entryFile +" "+ cfg.buildPath + "js/" + fileName +".bundle.min.js --minify --skip-source-maps", function(err, stdout, stderr){
-			console.log(err);
-			console.log(stdout);
-			console.log(stderr);
-		});
+		bundled = exec("jspm bundle-sfx "+ entryFile +" "+ cfg.buildPath + "js/" + fileName +".bundle.min.js --minify --skip-source-maps");
 	});
 });
 
