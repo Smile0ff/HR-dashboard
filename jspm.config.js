@@ -14,10 +14,13 @@ System.config({
   },
   shim: {
     "assets/js/lib/slider": {
-      "deps": ["jquery"],
+      "deps": [
+        "jquery"
+      ],
       "exports": "selectify"
     }
   },
+
   map: {
     "babel": "npm:babel-core@5.8.25",
     "babel-runtime": "npm:babel-runtime@5.8.25",

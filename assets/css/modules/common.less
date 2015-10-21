@@ -589,6 +589,38 @@ a{
 				}
 			}
 		}
+		&.photo-list-holder{
+			.item{
+				width: 240px;
+				height: 140px;
+				&.key{
+					span{
+						background: @black;
+						line-height: 140px;
+						padding: 0 0 0 20px;
+					}
+				}
+				&.value{
+					width: ~"calc(100% - 260px)";
+					height: auto;
+					padding: 0;
+					margin-left: 20px;
+					figure{
+						width: auto;
+						height: 140px;
+						float: left;
+						margin: 0 20px 20px 0;
+						border: 1px solid darken(@black, 100%);
+						box-sizing: border-box;
+						overflow: hidden;
+						img{
+							width: auto;
+							height: 100%;
+						}
+					}
+				}
+			}		
+		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
