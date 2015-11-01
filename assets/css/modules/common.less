@@ -338,6 +338,9 @@ a{
 					color: @white;
 				}
 			}
+			&.active{
+				a{ color: @white; }
+			}
 		}
 	}
 }
@@ -435,7 +438,7 @@ a{
 		&.sprtr-h{
 			display: block;
 			height: 4px;
-			background: linear-gradient(-125deg, @green, lighten(@green, 5%));
+			background: linear-gradient(-125deg, @grey, lighten(@grey, 5%));
 			overflow: hidden;
 			
 		}
@@ -566,7 +569,7 @@ a{
 	}
 }
 #read-data-holder{
-	ul, li{
+  	ul, li{
 		display: block;
 		width: 100%;
 		height: auto;
@@ -593,6 +596,26 @@ a{
 				width: ~"calc(100% - 240px)";
 				p{
 					padding: 20px;
+				}
+			  	&.btn-holder{
+				  	p{
+					  	display: inline-block;
+					  	padding-right: 60px;
+					}
+				  	*[class^="btn"]{
+					  	float: right;
+					  	&.padded{
+						  	padding-right: 15px;
+						}
+					  	a, span{
+						  	background: @black;
+						  	color: @white;
+						  	&:hover{
+								background: @white;
+								color: @black;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -777,8 +800,16 @@ a{
 	width: 100%;
 	position: relative;
 	background: transparent;
-	margin: 40px 0 20px;
+	margin: 0 0 20px;
 	overflow: hidden;
+	&.shift{
+		&.small-top{ margin-top: 20px; }
+		&.large-top{ margin-top: 40px; }
+		&.extra-large-top{ margin-top: 60px; }
+		&.small-bottom{ margin-bottom: 20px; }
+		&.large-bottom{ margin-bottom: 40px; }
+		&.extra-large-bottom{ margin-bottom: 60px; }
+	}
 	h2{
 		padding: 20px;
 		color: @grey;
@@ -802,7 +833,7 @@ a{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	adaptive start 					 		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and (max-width: 1366px){
+@media only screen and (max-width: 1280px){
 
 	#header{
 		& > .entitled{ display: none; }

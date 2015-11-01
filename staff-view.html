@@ -164,6 +164,29 @@
 				</div>
 				<div class="outer scrollable-holder">
 					<div class="inner scrollable">
+						<div id="bank-account-widget" class="shift small-bottom">
+							<div class="change-balance-holder">
+								<a href="#" class="change-balance"><span class="hrd-edit"></span>изменить баланс на счету</a>
+							</div>
+							<form action="#" method="POST" id="bank-account-form">
+								<div class="field-holder">
+									<input type="text" name="bank_account[add_money]" value="" placeholder="Введите сумму на которую вы хотите пополнить счет" id="add-money" data-rule-required="true" data-msg-required="Что-то не сходиться, проверьте еще раз" data-mask="#.##0,00" data-mask-reverse="true" class="add-money-field">
+									<label for="add-money">Пополнить счет</label>
+								</div>
+								<div class="field-holder balance-holder">
+									<input type="text" name="bank_account[balance]" value="1283,43" placeholder="Введите общую сумму счета" id="account-balance" data-rule-required="true" data-msg-required="Баланс не может быть пустым" data-mask="#.##0,00" data-mask-reverse="true">
+									<label for="account-balance">Изменение баланса</label>
+								</div>
+								<div class="balance-holder-view">
+									<p>
+										<span class="icon hrd-sales">Баланс на счету:</span> 1283,43 UAH
+									</p>
+								</div>
+								<button type="submit">
+									<span>Пополнить</span>
+								</button>
+							</form>
+						</div>
 						<div id="read-data-holder">
 							<ul>
 								<li>
