@@ -2,8 +2,8 @@
 /*	tables start							  					*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 table{
-	width: 100%;
-	margin-right: 0;
+	width: ~"calc(100% - 20px)";
+	margin-right: 20px;
 	border: 1px solid darken(@black, 100%);
 	box-sizing: border-box;
 	border-collapse: collapse;
@@ -41,7 +41,8 @@ table{
 			.btn-bind,
 			.btn-delete,
 			.btn-edit,
-			.btn-view{
+			.btn-view,
+			.btn-update{
 				width: 100%;
 				a{
 					border: none;
@@ -51,14 +52,16 @@ table{
 				.btn-bind,
 				.btn-delete,
 				.btn-edit,
-				.btn-view{
+				.btn-view,
+				.btn-update{
 					width: 120px;
 				}
 			    &.double-btn{
 					.btn-bind,
 					.btn-delete,
 					.btn-edit,
-					.btn-view{
+					.btn-view,
+					.btn-update{
 					  	width: 60px;
 					    float: left;
 					  	&:first-child{
